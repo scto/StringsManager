@@ -6,6 +6,8 @@
      android:layout_width="match_parent"
      android:gravity="center_vertical"
      android:layout_margin="7dp"
+     style="?attr/materialCardViewFilledStyle"
+     app:cardBackgroundColor="?attr/colorSurfaceContainer"
      app:cardCornerRadius="15dp"
      android:id="@+id/card">
 
