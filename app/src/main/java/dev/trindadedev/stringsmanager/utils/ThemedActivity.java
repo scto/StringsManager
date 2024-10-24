@@ -11,11 +11,10 @@ public class ThemedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle saved) {
         super.onCreate(saved);
-        phoneBars();
+        enableBackgroundNav()
     }
     
-    public void phoneBars(){
-        /*EdgeToEdge.enable(this);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);*/
-    }    
+    public void enableBackgroundNav(){
+        getWindow().setNavigationBarColor(getColor(R.color.md_theme_background));
+    }
 }
