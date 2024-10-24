@@ -39,7 +39,8 @@
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
                  android:layout_marginBottom="5dp"
-                 android:backgroundTint="@android:color/transparent"
+                 style="?attr/materialCardViewFilledStyle"
+                 app:cardBackgroundColor="?attr/colorSurfaceContainer"
                  app:cardCornerRadius="15dp">
 
                 <LinearLayout
@@ -69,7 +70,8 @@
             <com.google.android.material.card.MaterialCardView
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
-                 android:backgroundTint="@android:color/transparent"
+                 style="?attr/materialCardViewFilledStyle"
+                 app:cardBackgroundColor="?attr/colorSurfaceContainer"
                  android:layout_marginTop="5dp"
                  app:cardCornerRadius="15dp"
                  android:id="@+id/github_issues">
@@ -101,7 +103,8 @@
             <com.google.android.material.card.MaterialCardView
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
-                 android:backgroundTint="@android:color/transparent"
+                 style="?attr/materialCardViewFilledStyle"
+                 app:cardBackgroundColor="?attr/colorSurfaceContainer"
                  android:layout_marginTop="5dp"
                  app:cardCornerRadius="15dp"
                  android:id="@+id/github_contributors">
