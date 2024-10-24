@@ -16,7 +16,6 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.transition.MaterialSharedAxis;
 
 import dev.trindadedev.stringsmanager.R;
-import dev.trindadedev.stringsmanager.activities.api.github.GitHubContributorsActivity;
 import dev.trindadedev.stringsmanager.classes.GlobalConfig;
 import dev.trindadedev.stringsmanager.databinding.SettingsFragmentBinding;
 import dev.trindadedev.stringsmanager.classes.FileUtil;
@@ -55,12 +54,7 @@ public class SettingsFragment extends Fragment {
 
         binding.githubIssues.setOnClickListener(v -> {
            openURL(getActivity(), Repo.FULL + "/issues");
-        });
-        
-        binding.githubContributors.setOnClickListener(v -> {
-           Intent in = new Intent(ctx, GitHubContributorsActivity.class);
-           startActivity(in);
-        });
+        })
         
         return binding.getRoot();
     }
