@@ -54,7 +54,7 @@ public class SettingsFragment extends Fragment {
 
         binding.githubIssues.setOnClickListener(v -> {
            openURL(getActivity(), Repo.FULL + "/issues");
-        })
+        });
         
         return binding.getRoot();
     }
