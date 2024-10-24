@@ -32,7 +32,7 @@ public class StringsCreatorApp extends Application {
     
     public static final class Repo {
         public static final String FULL = "https://github.com/trindededev13/StringsManager";
-        public static final String ONWER = "trindededev13";
+        public static final String ONWER = "trindadedev13";
         public static final String NAME = "StringsManager";
     }
 
