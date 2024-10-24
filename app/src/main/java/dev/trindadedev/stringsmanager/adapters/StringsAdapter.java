@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.cardview.widget.CardView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -66,7 +65,7 @@ public class StringsAdapter extends BaseAdapter {
 
     static class ViewHolder {
         TextView textViewValue;
-        CardView card;
+        MaterialCardView card;
     }
 
     @Override
