@@ -39,7 +39,6 @@
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
                  android:layout_marginBottom="5dp"
-                 app:rippleColor="#000000"
                  android:backgroundTint="@android:color/transparent"
                  app:cardCornerRadius="15dp">
 
@@ -70,7 +69,6 @@
             <com.google.android.material.card.MaterialCardView
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
-                 app:rippleColor="#000000"
                  android:backgroundTint="@android:color/transparent"
                  android:layout_marginTop="5dp"
                  app:cardCornerRadius="15dp"
@@ -103,7 +101,6 @@
             <com.google.android.material.card.MaterialCardView
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
-                 app:rippleColor="#000000"
                  android:backgroundTint="@android:color/transparent"
                  android:layout_marginTop="5dp"
                  app:cardCornerRadius="15dp"

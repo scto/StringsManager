@@ -5,8 +5,6 @@
      android:layout_height="wrap_content"
      android:layout_width="match_parent"
      android:gravity="center_vertical"
-     app:rippleColor="#000000"
-     style="Gam.Card"
      android:layout_margin="7dp"
      app:cardCornerRadius="15dp"
      android:id="@+id/card">

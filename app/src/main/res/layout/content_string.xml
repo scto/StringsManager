@@ -16,7 +16,6 @@
         android:layout_marginBottom="10dp"
         android:padding="8dp"
         android:orientation="vertical"
-        style="@style/Gam.Card"
         app:cardCornerRadius="15dp"
         android:layout_marginTop="10dp"
         android:id="@+id/card">
