@@ -2,6 +2,7 @@ package dev.trindadedev.stringsmanager.activities.api.github;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.graphics.Color;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,6 +39,8 @@ public class GitHubContributorsActivity extends ThemedActivity {
         super.onCreate(savedInstanceState);
         binding = GithubContributorsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        
+        getWindow().setNavigationBarColor(Color.TRANSPARENT);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
