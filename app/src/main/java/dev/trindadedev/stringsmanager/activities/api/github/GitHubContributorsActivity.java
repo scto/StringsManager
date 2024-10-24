@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import static dev.trindadedev.stringsmanager.StringsCreatorApp.Repo;
 import dev.trindadedev.stringsmanager.StringsCreatorAppLog;
 import dev.trindadedev.stringsmanager.adapters.ContributorsAdapter;
 import dev.trindadedev.stringsmanager.classes.api.github.Contributor;
@@ -49,7 +50,7 @@ public class GitHubContributorsActivity extends ThemedActivity {
     }
 
     private void fetchContributors() {
-        Call<List<Contributor>> call = service.getContributors("aquilesTrindade", "StringsCreator");
+        Call<List<Contributor>> call = service.getContributors(Repo.ONWER, Repo.NAME);
 
         call.enqueue(new Callback<List<Contributor>>() {
             @Override

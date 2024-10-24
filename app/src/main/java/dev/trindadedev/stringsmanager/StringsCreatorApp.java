@@ -29,6 +29,12 @@ import java.util.HashMap;
 public class StringsCreatorApp extends Application {
 
     private static FragmentManager sFragmentManager;
+    
+    public static final class Repo {
+        public static final String FULL = "https://github.com/trindededev13/StringsManager";
+        public static final String ONWER = "trindededev13";
+        public static final String NAME = "StringsManager";
+    }
 
     public static void init(FragmentManager fragmentManager) {
         sFragmentManager = fragmentManager;

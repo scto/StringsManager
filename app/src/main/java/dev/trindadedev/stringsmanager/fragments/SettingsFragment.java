@@ -20,6 +20,7 @@ import dev.trindadedev.stringsmanager.activities.api.github.GitHubContributorsAc
 import dev.trindadedev.stringsmanager.classes.GlobalConfig;
 import dev.trindadedev.stringsmanager.databinding.SettingsFragmentBinding;
 import dev.trindadedev.stringsmanager.classes.FileUtil;
+import static dev.trindadedev.stringsmanager.StringsCreatorApp.Repo;
 
 import java.io.*;
 import java.text.*;
@@ -53,7 +54,7 @@ public class SettingsFragment extends Fragment {
         });
 
         binding.githubIssues.setOnClickListener(v -> {
-           openURL(getActivity(), "https://github.com/aquilesTrindade/StringsCreator/issues");
+           openURL(getActivity(), Repo.FULL + "/issues");
         });
         
         binding.githubContributors.setOnClickListener(v -> {
@@ -63,7 +64,7 @@ public class SettingsFragment extends Fragment {
         
         return binding.getRoot();
     }
-
+    
     private void getData() {
         binding.resourcesTag.setChecked(sp.getBoolean("ADD_RES", false));
     }
