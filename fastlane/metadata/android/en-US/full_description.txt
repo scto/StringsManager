@@ -1,7 +1,9 @@
-The Strings-Creator is android application for help developers to create string quickly 
+The Strings-Manager is android application for help developers to create string quickly 
 
 <p>Features</p>
 
+- Create and Edit: You can  create & edit Strings
+- Save: you can save the strings
 - Open source: You can see how the app works for yourself! 
 - Material Design 3: Modern and elegant design for your comfort! 
 - Navigation: Simple and intuitive navigation 
