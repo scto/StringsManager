@@ -9,7 +9,7 @@ import android.os.Bundle;
 import dev.trindadedev.stringsmanager.AppLogger;
 import dev.trindadedev.stringsmanager.StringsManagerApp;
 import dev.trindadedev.stringsmanager.utils.ThemedActivity;
-import dev.trindadedev.stringsmanager.classes.copyToClipboard;
+import dev.trindadedev.stringsmanager.classes.TextUtils;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import java.io.InputStream;
@@ -65,7 +65,7 @@ public class DebugActivity extends ThemedActivity {
         bld.setTitle("An error occured");
         bld.setMessage(madeErrMsg);
         bld.setPositiveButton("Copy", (d, w) -> {
-             copyToClipboard.copy(this, saco);
+             TextUtils.copy(this, saco);
         });
         bld.setNeutralButton("End Application", (d, w) -> {
              finish();
