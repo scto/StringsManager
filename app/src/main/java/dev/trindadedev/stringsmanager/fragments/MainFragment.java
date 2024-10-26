@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,18 +16,17 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.transition.MaterialSharedAxis;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import dev.trindadedev.stringsmanager.StringsCreatorApp;
+import dev.trindadedev.stringsmanager.StringsManagerApp;
 import dev.trindadedev.stringsmanager.classes.GlobalConfig;
 import dev.trindadedev.stringsmanager.classes.SimpleHighlighter;
 import dev.trindadedev.stringsmanager.*;
-import dev.trindadedev.stringsmanager.classes.copyToClipboard;
+import dev.trindadedev.stringsmanager.classes.TextUtils;
 import dev.trindadedev.stringsmanager.databinding.MainFragmentBinding;
 
 import java.io.IOException;
@@ -40,7 +38,6 @@ import java.util.HashMap;
 public class MainFragment extends Fragment {
 
     MainFragmentBinding binding;
-    copyToClipboard copyToClipboard = new copyToClipboard();
     boolean ADD_RES;
     HashMap<String, Object> map = new HashMap<>();
     int p = 0;
@@ -50,7 +47,7 @@ public class MainFragment extends Fragment {
     ArrayList<HashMap<String, Object>> listmap = new ArrayList<>();
     SharedPreferences sp;
     Context ctx;
-    StringsCreatorAppLog logger = new StringsCreatorAppLog();
+    AppLogger logger = StringsManagerApp.logger;
 
     @Override
     public void onCreate(Bundle bund) {
@@ -59,6 +56,8 @@ public class MainFragment extends Fragment {
         setExitTransition(new MaterialSharedAxis(GlobalConfig.SharedAxisExit, GlobalConfig.SharedAxisExitBoolean));
     }
 
+    @SuppressWarnings("DEPRECATION")
+    @Deprecated
     @Override
     public void onActivityResult(int rC, int rsC, Intent dt) {
         super.onActivityResult(rC, rsC, dt);
@@ -150,7 +149,7 @@ public class MainFragment extends Fragment {
     }
 
     private void updateList() {
-        StringsCreatorApp.updateListView(getActivity(), listmap, binding.listStrings);
+        StringsManagerApp.updateListView(getActivity(), listmap, binding.listStrings);
     }
 
     private void newString(String name, String value) {
@@ -183,9 +182,9 @@ public class MainFragment extends Fragment {
     }
 
     private void copyText(String text) {
-        copyToClipboard.copy(getActivity(), text);
+        TextUtils.copy(getActivity(), text);
         Toast.makeText(getActivity(), "Copiado", Toast.LENGTH_SHORT).show();
-        System.out.println("Copiado " + text);
+        logger.add("Copied text" + text);
     }
 
     private void dialogCode() {
@@ -219,13 +218,13 @@ public class MainFragment extends Fragment {
     }
 
     private void updateList(ListView ctc) {
-        StringsCreatorApp.updateListView(ctx, listmap, ctc);
-        Log.d("Utils", "List updated successfully.");
+        StringsManagerApp.updateListView(ctx, listmap, ctc);
+        logger.add("List updated successfully.");
     }
 
     private void putData() {
         sp.edit().putString("JSON", new Gson().toJson(listmap)).apply();
-        Log.d("Utils", "Data saved successfully.");
+        logger.add("Data saved successfully.");
     }
 
     private void getData(ListView listV) {

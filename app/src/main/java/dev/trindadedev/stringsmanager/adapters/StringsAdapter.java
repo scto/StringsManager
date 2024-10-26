@@ -25,13 +25,14 @@ import com.google.android.material.textfield.TextInputLayout;
 import dev.trindadedev.stringsmanager.R;
 import dev.trindadedev.stringsmanager.classes.SimpleHighlighter;
 import dev.trindadedev.stringsmanager.classes.SyntaxScheme;
-import dev.trindadedev.stringsmanager.StringsCreatorApp;
+import dev.trindadedev.stringsmanager.StringsManagerApp;
 import dev.trindadedev.stringsmanager.activities.MainActivity;
-import dev.trindadedev.stringsmanager.classes.copyToClipboard;
+import dev.trindadedev.stringsmanager.classes.TextUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@Deprecated
 public class StringsAdapter extends BaseAdapter {
 
     private Context mContext;
@@ -86,7 +87,7 @@ public class StringsAdapter extends BaseAdapter {
         new SimpleHighlighter(viewHolder.textViewValue, "xml");
         
         viewHolder.card.setOnLongClickListener(v ->{
-            if(StringsCreatorApp.getOrientation(mContext).equals("portrait")) {
+            if(StringsManagerApp.getOrientation(mContext).equals("portrait")) {
                 bottomsheet_actions(position);
             }else{
                 dialog_actions(position);    
@@ -95,7 +96,7 @@ public class StringsAdapter extends BaseAdapter {
         });
         
         viewHolder.card.setOnClickListener(v ->{
-             copyToClipboard.copy(mContext, mData.get(position).get("val").toString());
+             TextUtils.copy(mContext, mData.get(position).get("val").toString());
              Toast.makeText(mContext, mContext.getResources().getString(R.string.copied), 4000).show();
         });
 
@@ -132,7 +133,7 @@ public class StringsAdapter extends BaseAdapter {
                         mData.get((int)position).put("val", v);
                         mData.get((int)position).put("name", stringName.getText().toString());
                         mData.get((int)position).put("value", stringValue.getText().toString());
-                        StringsCreatorApp.updateListView(mContext, mData, listS);
+                        StringsManagerApp.updateListView(mContext, mData, listS);
                       });
                      dialog.setNegativeButton(((Activity)mContext).getResources().getString(R.string.cancel), (d, w) ->{           
                      });
@@ -145,7 +146,7 @@ public class StringsAdapter extends BaseAdapter {
                      dialog.setMessage(mContext.getResources().getString(R.string.delete_dialog_message));
                      dialog.setPositiveButton(mContext.getResources().getString(R.string.delete), (d, w) ->{
                      mData.remove(position);
-                     StringsCreatorApp.updateListView(mContext, mData, listS);
+                     StringsManagerApp.updateListView(mContext, mData, listS);
                  });
                 dialog.setNegativeButton(mContext.getResources().getString(R.string.cancel), (d, w) ->{
                 });
@@ -185,7 +186,7 @@ public class StringsAdapter extends BaseAdapter {
                         mData.get((int)position).put("val", v);
                         mData.get((int)position).put("name", stringName.getText().toString());
                         mData.get((int)position).put("value", stringValue.getText().toString());
-                        StringsCreatorApp.updateListView(mContext, mData, listS);
+                        StringsManagerApp.updateListView(mContext, mData, listS);
                       });
                      dialog.setNegativeButton(((Activity)mContext).getResources().getString(R.string.cancel), (d, w) ->{           
                      });
@@ -198,7 +199,7 @@ public class StringsAdapter extends BaseAdapter {
                      dialog.setMessage(mContext.getResources().getString(R.string.delete_dialog_message));
                      dialog.setPositiveButton(mContext.getResources().getString(R.string.delete), (d, w) ->{
                      mData.remove(position);
-                     StringsCreatorApp.updateListView(mContext, mData, listS);
+                     StringsManagerApp.updateListView(mContext, mData, listS);
                  });
                 dialog.setNegativeButton(mContext.getResources().getString(R.string.cancel), (d, w) ->{
                 });

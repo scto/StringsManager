@@ -26,9 +26,10 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class StringsCreatorApp extends Application {
+public class StringsManagerApp extends Application {
 
     private static FragmentManager sFragmentManager;
+    public static AppLogger  logger = new AppLogger();
     
     public static final class Repo {
         public static final String FULL = "https://github.com/trindededev13/StringsManager";

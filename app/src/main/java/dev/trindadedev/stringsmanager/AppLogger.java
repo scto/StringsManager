@@ -3,11 +3,11 @@ package dev.trindadedev.stringsmanager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StringsCreatorAppLog{
+public class AppLogger {
     
     List<String> logs;
     
-    public StringsCreatorAppLog() {
+    public AppLogger() {
         logs = new ArrayList<>();
     }
     

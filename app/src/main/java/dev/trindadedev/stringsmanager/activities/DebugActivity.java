@@ -6,7 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
-import dev.trindadedev.stringsmanager.StringsCreatorAppLog;
+import dev.trindadedev.stringsmanager.AppLogger;
+import dev.trindadedev.stringsmanager.StringsManagerApp;
 import dev.trindadedev.stringsmanager.utils.ThemedActivity;
 import dev.trindadedev.stringsmanager.classes.copyToClipboard;
 
@@ -15,7 +16,7 @@ import java.io.InputStream;
 
 public class DebugActivity extends ThemedActivity {
     
-    StringsCreatorAppLog logger = new StringsCreatorAppLog();
+    AppLogger logger = StringsManagerApp.logger;
     
     String[] exceptionType = {
         "StringIndexOutOfBoundsException",

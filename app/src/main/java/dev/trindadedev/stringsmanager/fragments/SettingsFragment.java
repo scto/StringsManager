@@ -19,7 +19,7 @@ import dev.trindadedev.stringsmanager.R;
 import dev.trindadedev.stringsmanager.classes.GlobalConfig;
 import dev.trindadedev.stringsmanager.databinding.SettingsFragmentBinding;
 import dev.trindadedev.stringsmanager.classes.FileUtil;
-import static dev.trindadedev.stringsmanager.StringsCreatorApp.Repo;
+import static dev.trindadedev.stringsmanager.StringsManagerApp.Repo;
 
 import java.io.*;
 import java.text.*;

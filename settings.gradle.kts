@@ -15,6 +15,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "StringsCreator"
+rootProject.name = "StringsManager"
 
 include(":app")
